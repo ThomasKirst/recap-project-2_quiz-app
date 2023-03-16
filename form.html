@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Question - Quiz App</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./components/form/form.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Quiz-App</h1>
+    </header>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__list-item">
+          <a
+            class="navigation__link"
+            href="/index.html"
+            aria-label="go to home page"
+          >
+            Home
+          </a>
+        </li>
+        <li class="navigation__list-item navigation__list-item--active">
+          <a
+            class="navigation__link"
+            href="/form.html"
+            aria-label="add a question"
+          >
+            Add a Question
+          </a>
+        </li>
+        <li class="navigation__list-item">
+          <a
+            class="navigation__link"
+            href="/bookmarks.html"
+            aria-label="go to bookmarks page"
+          >
+            Bookmarks
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <form class="form">
+        <label class="form__label">
+          Your question:
+          <textarea name="question" maxlength="150" required></textarea>
+          <span class="form__counter"></span>
+        </label>
+
+        <label class="form__label">
+          Your answer:
+          <textarea name="answer" maxlength="150" required></textarea>
+          <span class="form__counter"></span>
+        </label>
+
+        <label class="form__label">
+          Tag:
+          <input type="text" name="tag" required />
+        </label>
+
+        <button type="submit" class="form__submit">Submit</button>
+      </form>
+      <ul class="card-list" data-js="card-list"></ul>
+    </main>
+  </body>
+</html>
