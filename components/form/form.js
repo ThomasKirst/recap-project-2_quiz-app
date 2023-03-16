@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-console.log(form);
+
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -80,15 +80,36 @@ form?.addEventListener("submit", (event) => {
   // Not really important for the exercise, but it's a good practice
 
   event.target.reset();
+
+  // Bonus 3: How can the counters be reset?
+  // We might want to add two individual data-js attributes to the counters
 });
 
 // Counting the characters in the textarea
-form.addEventListener("input", (event) => {
-  const textarea = event.target;
-  const counter = textarea.nextElementSibling;
 
-  if (counter.classList.contains("form__counter")) {
-    const remaining = textarea.maxLength - textarea.value.length;
-    counter.textContent = `${remaining} characters remaining`;
-  }
+// Listen on each textarea individually
+const questionTextarea = document.querySelector("[name=question]");
+const answerTextarea = document.querySelector("[name=answer]");
+
+questionTextarea.addEventListener("input", (event) => {
+  const remaining = event.target.maxLength - event.target.value.length;
+  const counter = event.target.nextElementSibling;
+  counter.textContent = `${remaining} characters remaining`;
 });
+
+answerTextarea.addEventListener("input", (event) => {
+  const remaining = event.target.maxLength - event.target.value.length;
+  const counter = event.target.nextElementSibling;
+  counter.textContent = `${remaining} characters remaining`;
+});
+
+// More general solution: listen on the form
+// form.addEventListener("input", (event) => {
+//   const textarea = event.target;
+//   const counter = textarea.nextElementSibling;
+
+//   if (counter.classList.contains("form__counter")) {
+//     const remaining = textarea.maxLength - textarea.value.length;
+//     counter.textContent = `${remaining} characters remaining`;
+//   }
+// });
