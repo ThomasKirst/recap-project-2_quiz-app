@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  padding: 7rem 0 1rem;
+  margin: 0 auto;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.form__label > textarea {
+  height: 3rem;
+}
+
+.form__label > input {
+  height: 1.5rem;
+}
+
+.form__counter {
+  color: #ccc;
+  font-size: 0.8rem;
+  text-align: right;
+  height: 1rem;
+}
+
+.form__submit {
+  height: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
